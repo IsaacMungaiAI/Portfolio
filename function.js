@@ -50,7 +50,7 @@ showSlide(slideIndex);
 
 // Initialize EmailJS
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("-w4JXGwRZpnvSdUIw"); // Replace with your actual EmailJS Public Key
+    emailjs.init("-w4JXGwRZpnvSdUIw"); 
 });
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
@@ -60,8 +60,12 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
+    const submitBtn= document.getElementById("submit-btn");
 
-    // Send email using EmailJS
+    submitBtn.textContent="Sending...";
+    submitBtn.disabled=true;
+
+    
     const templateParams = {
         to_name: name,
         from_email: email,
@@ -72,16 +76,24 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     // Send email using EmailJS
     emailjs.send("service_37w2n36", "template_jrcxy49", templateParams)
     .then((response) => {
+        submitBtn.textContent="Sent!";
         alert("Email sent successfully!");
         console.log("Success:", response);
+
+        setTimeout(() => {
+            document.getElementById("contact-form").reset();
+            submitBtn.textContent = "Send"; // Reset button text
+            submitBtn.disabled = false; // Re-enable button
+        }, 1000);
+    
     })
     .catch((error) => {
         alert("Failed to send email. Please try again.");
         console.error("Error:", error);
     });
 
-    // Clear form fields after sending
+    // Clear form fields after sending the message
     document.getElementById("contact-form").reset();
 });
 
-// Function to clear the contact section (if needed)
+
