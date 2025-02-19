@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>mungai portfolio</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li> <a href="#" onclick="showContent('me')"> About Me</a></li>
+            <li><a href="#" onclick="showContent('technologies')">Technologies</a></li>
+            <li><a href="#" onclick="showContent('contact')">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="profile">
+        <img src="images/SCIT 2.jpg" alt="profile-icon" class="profile-img">
+        <h2>Isaac Mungai</h2>
+    </div>
+
+    <section class="carousel">
+        <button class="previous" onclick="previousSlide()">&#10094;</button>
+        <div class="carousel-content">
+            <img src="images/874464-kotlin-powered-android-app-mvvm-koin-and-coroutines.png" class="slide">
+            <img src="images/R (1).jpeg" class="slide">
+            <img src="images/R.png" class="slide">
+            <img src="images/wp5542714.webp" class="slide">
+        </div>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </section>
+
+    <section id="me" class="content">
+        <h2>About Me</h2>
+        <p>Hello. I am Isaac Mungai Mbugua, a Computer Science Student & Aspiring Tech Leader
+
+            I am a passionate and driven second-year Computer Science student with a strong interest in software
+            development, networking, and cloud computing. My academic journey has equipped me with skills in Java
+            programming, network programming, and database engineering, which I actively refine through hands-on
+            projects.
+
+            Beyond my coursework, I am exploring ARM assembly programming and AWS DeepRacer, applying my knowledge to
+            real-world scenarios. I am also interested in the intricacies of becoming an Internet Service Provider
+            (ISP), further expanding my technical expertise.
+
+            As an aspiring leader, I am dedicated to making a positive impact in the computing community, with a goal of
+            becoming the School of Computing and Information Technology Representative at my university. I thrive in
+            collaborative environments, embrace challenges, and continuously seek opportunities to grow and innovate.
+        </p>
+        <button class="close-btn" onclick="closeSection('me')">Clear</button>
+    </section>
+
+    <section id="technologies" class="content">
+        <h2>Technologies</h2>
+        <h3>
+            <p>Technologies I Have Worked With:
+        </h3>
+        <ul>
+            <h4>Programming Languages & Development:</h4>
+            <li>ARM Assembly Working with ARM architecture using an emulator and ASM IDE to understand low-level
+                programming.</li>
+            <li>Database Management & Engineering</li>
+            <li>Database Normalization Practicing database normalization and engineering using an e-commerce platform as
+                a case study.</li>
+        </ul>
+        <ul>
+            <h4>Cloud Computing & AI</h4>
+            <li>AWS DeepRacer Training and optimizing reinforcement learning models for autonomous racing in the AWS
+                cloud environment.</li>
+        </ul>
+
+        <ul>
+            <h4>Networking & System Administration</h4>
+            <li>Network Programming with Java Exploring socket programming and network communication.</li>
+            <li> Internet Service Provider (ISP) Fundamentals Learning about network infrastructure, routing, and
+                service provision.</li>
+        </ul>
+        <ul>
+            <h4>Emulation & System Development</h4>
+            <li>ARM Emulator on Windows 10 Running and testing ARM-based programs on an emulated environment for deeper
+                system-level understanding.</li>
+        </ul>
+        </p>
+        <button class="close-btn" onclick="closeSection('technologies')">Clear</button>
+    </section>
+
+    <section id="contact" class="content">
+        <h2>Contact me</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Yourname" required><br>
+            <input type="email" id="email" placeholder="example@gmail.com" required><br>
+            <textarea type="text" id="message" placeholder="Type message" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+        <button class="close-btn" onclick="closeSection('contact')">Clear</button>
+    </section>
+    <script src="function.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <footer class="footer">
+        <p>&copy; 2025 Isaac Mungai. All Rights Reserved.</p>
+        <div class="icons">
+            <a href="https://www.instagram.com/yc33.mungai_/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://wa.me/+@254103273776" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://github.com/IsaacMungaiAI" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>
