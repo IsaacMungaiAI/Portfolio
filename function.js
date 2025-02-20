@@ -88,8 +88,15 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     
     })
     .catch((error) => {
+        submitBtn.textContent="Failed!"
         alert("Failed to send email. Please try again.");
         console.error("Error:", error);
+
+        setTimeout(() => {
+            document.getElementById("contact-form").reset();
+            submitBtn.textContent = "Send"; // Reset button text
+            submitBtn.disabled = false; // Re-enable button
+        }, 1000);
     });
 
     // Clear form fields after sending the message
