@@ -1,11 +1,14 @@
 function showContent(sectionId){
     document.querySelectorAll('.content').forEach(section=>{
-        section.computedStyleMap.display='none';
+        section.style.display='none';
     });
 
     const section=document.getElementById(sectionId);
-    section.style.display='block';
-    section.scrollIntoView({behavior: 'smooth', block:'start'});
+    if(section){
+        section.style.display='block';
+        section.scrollIntoView({behavior: 'smooth', block:'start'});
+    }
+    
 }
 
 
@@ -25,7 +28,7 @@ const slides=document.querySelectorAll(".slide");
 function showSlide(index){
     if(index>=slides.length) slideIndex=0;
     if(index<0) slideIndex=slideIndex.length-1;
- // slideIndex=index;
+ 
     slides.forEach(slide=>{
         slide.style.display="none";
     });
@@ -48,7 +51,7 @@ showSlide(slideIndex);
 
 
 
-// Initialize EmailJS
+
 document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("-w4JXGwRZpnvSdUIw"); 
 });
@@ -56,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // Get form values
+    
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
@@ -73,7 +76,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     };
 
 
-    // Send email using EmailJS
+    
     emailjs.send("service_37w2n36", "template_jrcxy49", templateParams)
     .then((response) => {
         submitBtn.textContent="Sent!";
@@ -82,8 +85,8 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
         setTimeout(() => {
             document.getElementById("contact-form").reset();
-            submitBtn.textContent = "Send"; // Reset button text
-            submitBtn.disabled = false; // Re-enable button
+            submitBtn.textContent = "Send"; 
+            submitBtn.disabled = false; 
         }, 1000);
     
     })
@@ -99,7 +102,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
         }, 1000);
     });
 
-    // Clear form fields after sending the message
+    
     document.getElementById("contact-form").reset();
 });
 
